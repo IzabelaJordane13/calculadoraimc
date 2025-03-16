@@ -1,9 +1,9 @@
 package com.comunidadedevspace.imc
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import android.widget.Button
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.snackbar.Snackbar
 import com.google.android.material.textfield.TextInputEditText
 
 class MainActivity : AppCompatActivity() {
@@ -14,7 +14,6 @@ class MainActivity : AppCompatActivity() {
         //Recuper os componentes EditText
         //Criar uma variavel e associar (=) o componente de UI<EditText>
         //Recuperar o botao da tela
-
         //Colocar acao no botao setOnClickListener
         //Recuperar o texto digitado no edt peso
 
@@ -24,13 +23,31 @@ class MainActivity : AppCompatActivity() {
         val btnCalcular = findViewById<Button>(R.id.btn_calcular)
 
         btnCalcular.setOnClickListener {
-            val peso : Float = edtPeso.text.toString().toFloat()
-            val altura : Float = edtAltura.text.toString().toFloat()
 
-            val altura02 = altura * altura
-            val resultado = peso / altura02
-            println("Roque acao do botao" + resultado)
+
+            val pesoStr: String = edtPeso.text.toString()
+            val alturaStr: String = edtAltura.text.toString()
+
+            if (pesoStr == "" || alturaStr == "") {
+                //Mostrar mensagem para o usuario
+
+                Snackbar
+                    .make(
+                        edtPeso,
+                        "Preencha todos os campos",
+                        Snackbar.LENGTH_LONG
+                    )
+                    .show()
+
+            } else {
+                val peso = pesoStr.toFloat()
+                val altura = alturaStr.toFloat()
+
+                val altura02 = altura * altura
+                val resultado = peso / altura02
+
+                println("Roque acao do botao" + resultado)
+            }
         }
-
     }
 }
