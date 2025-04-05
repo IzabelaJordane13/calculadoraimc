@@ -1,11 +1,17 @@
 package com.comunidadedevspace.imc
 
+import android.graphics.Color
 import android.os.Bundle
+import android.text.method.TextKeyListener
+import android.view.TextureView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.google.android.material.textfield.TextInputEditText
+import com.google.android.material.textfield.TextInputLayout
 
 const val KEY_RESULT_IMC= "ResultActivity.KEY_IMC"
 
@@ -22,18 +28,18 @@ class ResultActivity : AppCompatActivity() {
 
         tvResult.text = result.toString()
 
-        val classificacao: String = if (result <= 18.5f) {
-            "MAGREZA"
-        } else if (result > 18.5f && result <= 24.9f) {
-            "NORMAL"
-        } else if (result > 25f && result <= 29.9f) {
-            "SOBREPESO"
-        } else if (result > 30f && result <= 39.9f) {
-            "OBESIDADE"
-        } else {
-            "OBESIDADE GRAVE"
+        val (classificacao, color) = when {
+            result <= 18.5 -> "MAGREZA" to R.color.color_red
+            result in 18.5..24.9 -> "NORMAL" to R.color.color_green
+            result in 25.0..29.9 -> "SOBREPESO" to R.color.color_yellow
+            result in 30.0..39.9 -> "OBESIDADE" to R.color.color_red
+            else -> "OBESIDADE GRAVE" to R.color.color_red
+
         }
 
         tvClassificacao.text = classificacao
-    }
+        tvClassificacao.setTextColor(ContextCompat.getColor(this, color))
+        }
 }
+
+
