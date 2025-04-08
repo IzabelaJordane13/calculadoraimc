@@ -6,14 +6,24 @@ Esse projeto e um aplicativo android nativo desenvolvido com a linguagem de prog
 Screenshots
 
 ## Tecnologias
-Techs
+- Activity
+- Intent
+- Snackbar
+- Viewgroups
+   - LinearLayout
+   - ConstraintLayout
+- Views
+   - ImageView
+   - EditText
+   - TextView
+   - Button     
 
 
 ## License
 ```
 The MIT License (MIT)
 
-Copyright (c) 2023 Roque Buarque Junior
+Copyright (c) 2025 Izabela Souza
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of
 this software and associated documentation files (the "Software"), to deal in
