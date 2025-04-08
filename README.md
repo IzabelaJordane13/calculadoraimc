@@ -4,7 +4,7 @@ Esse projeto e um aplicativo android nativo desenvolvido com a linguagem de prog
 ## :camera_flash: Screenshots
 <!-- You can add more screenshots here if you like -->
 Screenshots
-<img src="Screenshot_20250408_18243scren1](https://github.com/user-attachments/assets/be60db00-f26e-45dd-8b5f-5afc56678d47" width=260?> <img src="https://github.com/user-attachments/assets/b177c231-f64a-4916-908c-dcdfd756d72f" width=260/> 
+<img src="https://github.com/user-attachments/assets/be60db00-f26e-45dd-8b5f-5afc56678d47" width=260?> <img src="https://github.com/user-attachments/assets/b177c231-f64a-4916-908c-dcdfd756d72f" width=260/> 
 ## Tecnologias
 - Activity
 - Intent
